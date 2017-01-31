@@ -16,16 +16,21 @@ function biab_init() { ?>
 	<h1> Put Your Blog in a Box </h1>
 	<script>
 		function take_photo() {
+			jQuery('#submit-btn').hide();
+			jQuery('#loading-gif').show();
 			jQuery.post( "admin-post.php", { action: "biab_take_photo" } ).done(
 				function( data ) {
-					jQuery( ".result" ).html( data );
+					console.log(data);
+					jQuery('#loading-gif').hide();
+					jQuery('#submit-btn').show();
 				}
 			);
-			return false;
+			return false; // so page doesn't refresh
 		}
 	</script>
 	<form>
-		<button onClick="return take_photo()"> Take Photo </button>
+		<button id="submit-btn" onClick="return take_photo()"> Take Photo </button>
+		<img style="display:none" src="/i/loading.gif" id="loading-gif">
 	</form>
 
 	<div class="result"></div>
@@ -34,5 +39,8 @@ function biab_init() { ?>
 add_action( 'admin_post_biab_take_photo', 'biab_take_photo' );
 
 function biab_take_photo() {
-	echo "<h3> Click! </h3> ";
+	error_log("here!");
+	$output = array();
+	exec("/opt/wp/photo.sh", $output);
+	return implode($output);
 }
