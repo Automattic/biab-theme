@@ -7,12 +7,14 @@ Version: 0.1
 */
 
 include dirname( __FILE__ ).'/automate.php';
+include dirname( __FILE__ ).'/settings.php';
 
 add_action('admin_menu', 'biab_setup_menu');
 
 function biab_setup_menu() {
 	add_menu_page( 'Blog in a Box Admin Page', 'BIAB 📦', 'manage_options', 'biab-plugin', 'biab_init' );
 	add_submenu_page( 'biab-plugin', 'Automate BIAB', 'Automate', 'manage_options', 'biab-plugin-automate', 'biab_automate' );
+	add_submenu_page( 'biab-plugin', 'BIAB Settings', 'Settings', 'manage_options', 'biab-plugin-settings', 'biab_settings' );
 }
 
 function biab_init() { ?>
