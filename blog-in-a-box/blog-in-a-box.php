@@ -61,3 +61,25 @@ function biab_take_photo() {
 	error_log( print_r( $output, true ) );
 	echo implode($output);
 }
+
+function sense_hat_create_table() {
+	global $wpdb;
+
+	$table_name = $wpdb->prefix . 'sense_hat';
+
+	$charset_collate = $wpdb->get_charset_collate();
+
+	$sql = "CREATE TABLE $table_name (
+		id mediumint(9) NOT NULL AUTO_INCREMENT,
+		temperature double NOT NULL,
+		humidity double NOT NULL,
+		air_pressure double NOT NULL,
+		PRIMARY KEY  (id)
+	) $charset_collate;";
+
+	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+	dbDelta( $sql );
+
+}
+
+register_activation_hook( __FILE__, 'sense_hat_create_table' );
