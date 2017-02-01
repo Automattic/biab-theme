@@ -81,5 +81,10 @@ function sense_hat_create_table() {
 	dbDelta( $sql );
 
 }
-
 register_activation_hook( __FILE__, 'sense_hat_create_table' );
+
+function register_sensehat_temperature_widget() {
+	require_once( ABSPATH . 'wp-content/plugins/biab/widgets/SenseHat_Temperature_Widget.php' );
+    register_widget( 'SenseHat_Temperature_Widget' );
+}
+add_action( 'widgets_init', 'register_sensehat_temperature_widget' );
