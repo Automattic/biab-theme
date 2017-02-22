@@ -1,10 +1,10 @@
-/*	
-Theme Name: BIAB
+/*
+Theme Name: Blog In A Box
 Theme URI: https://automattic.com/
-Description: Put A Blog In A Box.
+Description: WordPress theme for Blog In A Box
 Author: Team Tinker
 Author URI: https://automattic.com/
-Version: 0.1.0
+Version: 1.0
 */
 
 /* CSS Reset */
@@ -215,8 +215,3 @@ header h1 a:visited {
 	display: inline-block;
 	margin: 0 10px;
 }
-
-
-
-
-
