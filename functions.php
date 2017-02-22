@@ -7,7 +7,7 @@
 /**
  * Nav Menu
  */
- 
+
 function register_custom_menu() {
 	register_nav_menu('primary', __('Primary Navigation'));
 }
@@ -19,10 +19,8 @@ add_action('init', 'register_custom_menu');
  */
 
 function biab_setup() {
-
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
-
 
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'biab-featured-image', 720, 540, true );
@@ -32,7 +30,6 @@ function biab_setup() {
 	    'container' => 'content',
 	    'footer' => false,
 	) );
-
 }
 add_action( 'after_setup_theme', 'biab_setup' );
 
