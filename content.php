@@ -9,17 +9,17 @@
 		<?php if ( '' !== get_the_post_thumbnail() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'biab-featured-image' ); ?>
+				<?php if ( get_the_content() === '' ) the_post_thumbnail( 'biab-featured-image' ); ?>
 			</a>
 		</div>
 		<?php endif; ?>
 
 		<?php if ( is_search() ) :  ?>
-		
+
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div>
-		
+
 		<?php else : ?>
 
 		<div class="entry-content">
