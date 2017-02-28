@@ -1,6 +1,6 @@
 # Blog in a Box WordPress theme
 
-A custom WordPress theme designed for Blog In A Box.
+A custom WordPress theme designed for [Blog In A Box](https://inabox.blog/).
 
 Provides a simple single column theme that is configured to make use of a Pi camera photos and SenseHAT readings, and to show these in a simple manner. It is not a fully-featured WordPress theme, and should be treated as a starting point for WordPress/Raspberry Pi mashups.
 
@@ -8,13 +8,11 @@ Provides a simple single column theme that is configured to make use of a Pi cam
 
 If widgets are enabled the theme will convert into a two column theme, with the widgets shown on the right.
 
-You can read more about Blog In A Box at [FINAL URL](https://automattic.com).
-
 ## Usage
 
 This is a standard WordPress theme and should be placed in `wp-content/themes` and enabled from the WordPress admin interface.
 
-It is primarily designed to be used in conjunction with [Blog In A Box](https://automattic.com), although you can use it standalone.
+It is primarily designed to be used in conjunction with [Blog In A Box](https://inabox.blog/), although you can use it standalone.
 
 ## Contributing
 
